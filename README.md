@@ -24,7 +24,7 @@ distribution across states to understand local customer demand.
 promoting low-performing products, monitoring seasonal patterns, and expanding focus
 on top revenue-generating categories.
 
-💻 Tech Stack
+###💻 Tech Stack
 Layer                        Technology 
 Dashboard Development       Power BI 
 Cloud Platform              Azure
