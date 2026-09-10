@@ -12,7 +12,7 @@ CREATE TABLE Fertilizers_Sales (
     Product             VARCHAR(50) NOT NULL,
     Category            VARCHAR(25) NOT NULL,
     Quantity_MT         DECIMAL(12, 2) NOT NULL,
-    Unit_Price          DECIMA L(12, 2) NOT NULL,
+    Unit_Price          DECIMAL(12, 2) NOT NULL,
     Discount_Pct        DECIMAL(5, 3) NOT NULL,
     Revenue             DECIMAL(18, 2) NOT NULL,
     COGS                DECIMAL(18, 2) NOT NULL,
