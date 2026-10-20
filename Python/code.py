@@ -3,11 +3,11 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
-# ─── 1. INGESTION ────────────────────────────────────────────────────────────
+# ─── 1. lOAD THE DATA ────────────────────────────────────────────────────────────
 df = pd.read_csv('C:\project\DataSet.csv', parse_dates=['Date'])
 print(f"[1] Loaded {len(df):,} rows × {df.shape[1]} columns")
 
-# ─── 2. DATA QUALITY REPORT ──────────────────────────────────────────────────
+# ─── 2. CHECK DATA QUALITY ──────────────────────────────────────────────────
 print("\n[2] DATA QUALITY REPORT")
 print(f"  Nulls: {df.isnull().sum().sum()}")
 print(f"  Duplicates: {df.duplicated('TransactionID').sum()}")
@@ -15,7 +15,7 @@ print(f"  Date range: {df.Date.min().date()} → {df.Date.max().date()}")
 print(f"  Revenue negatives: {(df.Revenue < 0).sum()}")
 print(f"  Return rate: {(df.ReturnFlag=='Yes').mean()*100:.1f}%")
 
-# ─── 3. CLEANING ─────────────────────────────────────────────────────────────
+# ─── 3. DATA CLEANING ─────────────────────────────────────────────────────────────
 df['Month_Name'] = df.Date.dt.strftime('%b')
 df['YearMonth']  = df.Date.dt.to_period('M')
 df_clean = df[df.ReturnFlag == 'No'].copy()
